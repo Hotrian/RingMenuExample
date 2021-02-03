@@ -17,7 +17,7 @@ public class RingMenu : MonoBehaviour
     public Sprite[] Icons;
     public float Distance = 50f;
     public float OpenCloseTime = 0.5f;
-    public int OpenCLoseSpins = 2;
+    public int OpenCloseSpins = 2;
     public float SelectTime = 0.25f;
 
     // Private Fields
@@ -142,7 +142,7 @@ public class RingMenu : MonoBehaviour
         {
             var time = frameTime / OpenCloseTime;
             // Move the slots every frame
-            SetPosDuringOpenClose(Mathf.Lerp(0, Distance, time), Mathf.Deg2Rad * 360f * OpenCLoseSpins * time);
+            SetPosDuringOpenClose(Mathf.Lerp(0, Distance, time), Mathf.Deg2Rad * 360f * OpenCloseSpins * time);
             // Change the transparency of the slots every frame
             SetRingAlpha(time);
             yield return new WaitForEndOfFrame();
@@ -163,7 +163,7 @@ public class RingMenu : MonoBehaviour
         {
             var time = frameTime / OpenCloseTime;
             // Move the slots every frame
-            SetPosDuringOpenClose(Mathf.Lerp(Distance, 0f, time), Mathf.Deg2Rad * 360f * OpenCLoseSpins * (1f - time));
+            SetPosDuringOpenClose(Mathf.Lerp(Distance, 0f, time), Mathf.Deg2Rad * 360f * OpenCloseSpins * (1f - time));
             // Change the transparency of the slots every frame
             SetRingAlpha(1f - time);
             yield return new WaitForEndOfFrame();
