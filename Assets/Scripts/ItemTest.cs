@@ -18,7 +18,7 @@ public class ItemTest : MonoBehaviour
         // Register to be notified when the item selected by the Ring Menu has changed.
         RingMenu.Instance.OnItemSelected += UpdateSelection;
 
-        // Update the selected item manually in case we load before the RingMenu.
+        // Update the selected item manually in case we load after the RingMenu has fired the initial event.
         UpdateSelection(RingMenu.Instance.GetCurrentSelection());
     }
 
