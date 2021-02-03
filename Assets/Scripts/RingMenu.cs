@@ -2,10 +2,14 @@
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
+/// <summary>
+/// A simple Ring Menu, which can be opened and closed with Tab, and navigated with Q and E respectively.
+/// </summary>
 public class RingMenu : MonoBehaviour
 {
     public static RingMenu Instance;
 
+    #region Properties and Fields
     // Unity Properties
     public GameObject Anchor;
     public GameObject SelectorPrefab;
@@ -31,6 +35,7 @@ public class RingMenu : MonoBehaviour
     // Public Events
     public ItemSelectedDelegate OnItemSelected;
     public delegate void ItemSelectedDelegate(int item);
+    #endregion
 
     #region Unity Methods
     public void Awake()
