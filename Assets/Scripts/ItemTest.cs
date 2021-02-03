@@ -10,7 +10,7 @@ public class ItemTest : MonoBehaviour
     public Image Image;
 
     // The current item selected by the Ring Menu.
-    // This only opens when the Ring Menu closes.
+    // This only updates when the Ring Menu closes.
     private int _selectedItem;
 
     void Start()
