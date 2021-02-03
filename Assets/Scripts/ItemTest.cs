@@ -16,12 +16,10 @@ public class ItemTest : MonoBehaviour
     void Start()
     {
         // Register to be notified when the item selected by the Ring Menu has changed.
-        RingMenu.Instance.OnItemSelected += (selected) =>
-        {
-            _selectedItem = selected;
-            Image.sprite = RingMenu.Instance.Icons[_selectedItem];
-            Debug.Log($"Selected Item: {_selectedItem}");
-        };
+        RingMenu.Instance.OnItemSelected += UpdateSelection;
+
+        // Update the selected item manually in case we load before the RingMenu.
+        UpdateSelection(RingMenu.Instance.GetCurrentSelection());
     }
 
     void Update()
@@ -34,5 +32,12 @@ public class ItemTest : MonoBehaviour
                 Debug.Log($"Using Item: {_selectedItem}");
             }
         }
+    }
+
+    private void UpdateSelection(int selected)
+    {
+        _selectedItem = selected;
+        Image.sprite = RingMenu.Instance.Icons[_selectedItem];
+        Debug.Log($"Selected Item: {_selectedItem}");
     }
 }

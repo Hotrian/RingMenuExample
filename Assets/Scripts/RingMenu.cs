@@ -103,6 +103,11 @@ public class RingMenu : MonoBehaviour
     /// Returns true if the menu is closed and not animating, false otherwise.
     /// </summary>
     public bool GetMenuIsClosed() => !_ringOpen && !_ringOpenCloseAnimation;
+
+    /// <summary>
+    /// Returns the index of the currently selected item.
+    /// </summary>
+    public int GetCurrentSelection() => _ringSelected;
     #endregion
 
     #region Coroutines
